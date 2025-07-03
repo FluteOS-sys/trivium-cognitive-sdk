@@ -1,0 +1,88 @@
+🧠 Build a full-stack cognitive architecture app called "Trivium".
+
+📦 Backend (FastAPI)
+Use Python 3.11 with FastAPI and Uvicorn.
+
+Create the following API endpoints:
+
+POST /process: Accepts JSON {text: string, lenses: array}. Returns multi-lens outputs.
+
+POST /compare: Accepts JSON {text: string, lenses: array}. Returns side-by-side outputs.
+
+POST /synthesize: Accepts JSON {text: string, lenses: array}. Returns a single blended response.
+
+GET /observer: Returns a log of observer insights.
+
+Implement a Lens Manager:
+
+Supports these lenses: Ethical, Emotional, Logical, Symbolic.
+
+Each lens has a process(text: str) method that modifies input text based on its perspective.
+
+Add a Krishna Layer:
+
+Observer: Logs system state and user input per session.
+
+Light of Attention: Triggers a "pulse" insight every 9 API calls.
+
+Preload a symbolic neuron map from a YAML file (neurons.yaml) with 72 Sovereignties. Each sovereignty includes light and shadow traits.
+
+Use in-memory storage (dictionary) for observer logs and active neuron states for V1.
+
+🌌 Frontend (React + Tailwind)
+Build a React app with the following UI:
+
+Text input field for user prompt.
+
+Lens selector (toggle buttons for Ethical, Emotional, Logical, Symbolic).
+
+Submit button labeled "Reflect".
+
+Output area:
+
+Shows each lens output in a card view.
+
+Includes an Observer panel that shows the latest Krishna insight.
+
+Includes a synthesis slider to blend lens perspectives.
+
+Theme: Full Mythic Aesthetic
+
+Dark mode.
+
+Glowing sovereignty orbs for each lens.
+
+Subtle animated glyphs in the background.
+
+Connect frontend to backend API using Axios.
+
+🛠️ Deployment
+Serve frontend from / and backend API from /api/v1.
+
+Use Replit’s built-in Nix environment to install Python and Node dependencies.
+
+Install backend deps: fastapi, uvicorn, pydantic, pyyaml
+
+Install frontend deps: react, react-dom, axios, tailwindcss
+
+Expose the full-stack app live on Replit.
+
+📝 Notes
+Keep code modular: backend/ for FastAPI, frontend/ for React.
+
+Add clear comments explaining key functions.
+
+Use .env for any API keys or config (if needed).
+
+Focus on getting a working prototype that can be refined later.
+
+🎯 Goal
+Build a fully working cognitive architecture prototype that showcases:
+
+Multi-lens processing (Ethical, Emotional, Logical, Symbolic).
+
+Observer commentary (Krishna Layer).
+
+Mythic frontend UI.
+
+API endpoints ready for developer use.

@@ -1,0 +1,123 @@
+{
+  "name": "trivium-cognitive-lens",
+  "displayName": "Trivium Cognitive Lens",
+  "description": "Apply cognitive lenses to analyze code through 10 archetypal perspectives",
+  "version": "1.0.0",
+  "publisher": "trivium-sdk",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning",
+    "Linters"
+  ],
+  "keywords": [
+    "cognitive",
+    "analysis",
+    "code review",
+    "ai",
+    "lens",
+    "architecture",
+    "debugging",
+    "security"
+  ],
+  "activationEvents": [
+    "onCommand:trivium.analyzeSelection",
+    "onCommand:trivium.codeReview",
+    "onCommand:trivium.debugging",
+    "onCommand:trivium.securityAudit"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "trivium.analyzeSelection",
+        "title": "Analyze Selection",
+        "category": "Trivium"
+      },
+      {
+        "command": "trivium.codeReview",
+        "title": "Code Review Analysis",
+        "category": "Trivium"
+      },
+      {
+        "command": "trivium.debugging",
+        "title": "Debugging Analysis",
+        "category": "Trivium"
+      },
+      {
+        "command": "trivium.securityAudit",
+        "title": "Security Audit",
+        "category": "Trivium"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection",
+          "command": "trivium.analyzeSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "trivium.codeReview",
+          "group": "navigation"
+        },
+        {
+          "command": "trivium.debugging",
+          "group": "navigation"
+        },
+        {
+          "command": "trivium.securityAudit",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "trivium.analyzeSelection",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "trivium.codeReview"
+        },
+        {
+          "command": "trivium.debugging"
+        },
+        {
+          "command": "trivium.securityAudit"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Trivium Cognitive Lens",
+      "properties": {
+        "trivium.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Trivium cognitive analysis"
+        },
+        "trivium.autoPatterns": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically select optimal cognitive patterns"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/node": "^16.x",
+    "typescript": "^4.9.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trivium-sdk/trivium-cognitive-sdk"
+  },
+  "license": "MIT",
+  "icon": "icon.png"
+}
